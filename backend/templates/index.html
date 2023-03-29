@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block title %} Все товары {% endblock title %}
+  {% block content %}
+
+    <section class="grid">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="myfile">
+        <button type="submit">Загрузить</button>
+      </form>
+    </section>
+
+  {% endblock content %}

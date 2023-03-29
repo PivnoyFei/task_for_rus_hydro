@@ -1,0 +1,50 @@
+{% load static %}
+{% with request.resolver_match.view_name as view_name %}
+
+<header>
+    <head>
+      <nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top shadow">
+        <div class="container bg-black">
+          <a class="navbar-brand" href="">
+            <span style="color:white; font-size: 22px;"=>RusHydro</a>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbar1">
+  
+          <div class="navbar-collapse justify-content-center" id="navbar1">
+            <div class="d1 col-md-5 w-100">
+            </div>
+          </div>
+  
+            <ul class="nav nav-pills justify-content-end">
+              {% if user.is_authenticated %}
+                <li class="nav-item active"><a class="nav-link link-light disabled" href="">{{ user.username }}</a></li>
+              {% else %}
+                <li class="nav-item active"><a class="nav-link link-light disabled" href=""> Гость </a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </head>
+    <style>
+      .navbar {
+        height: 45px;
+      }
+      @media (max-width: 767px) {
+        .navbar-brand {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          text-align: center;
+        }
+        .navbar-toggler {
+          z-index:3;
+        }
+      }
+    </style>
+  </header>
+
+{% endwith %}
